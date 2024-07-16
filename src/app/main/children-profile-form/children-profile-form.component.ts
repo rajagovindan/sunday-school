@@ -27,7 +27,7 @@ export class ChildrenProfileFormComponent {
       location: ['', Validators.required],
       address: ['', Validators.required],
       studentMobile1: ['', Validators.required],
-      studentMobile2: ['', Validators.required],
+      studentMobile2: [''],
       fatherName: ['', Validators.required],
       fatherReligion: ['', Validators.required],
       fatherDenomination: ['', Validators.required],

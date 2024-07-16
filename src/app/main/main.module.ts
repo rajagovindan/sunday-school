@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { PrimengModule } from '../primeng.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TeachersProfileFormComponent } from './teachers-profile-form/teachers-profile-form.component';
+import { ChildrenAcademicFormComponent } from './children-academic-form/children-academic-form.component';
 
 
 
@@ -17,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     MainComponent,
     ChildrenProfileFormComponent,
-    ChildrenProfileComponent
+    ChildrenProfileComponent,
+    TeachersProfileFormComponent,
+    ChildrenAcademicFormComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,49 @@
+<form [formGroup]="studentsacademicForm" class="container" style="padding-top:50px">
+    <h5 class="mb-2">STUDENTS ACEDEMIC DETAILS</h5>
+    <hr>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" formControlName="name" required>
+                <mat-error *ngIf="studentsacademicForm.get('name')!.hasError('required')">
+                    Name is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Admission Number</mat-label>
+                <input matInput type="text" formControlName="admissionNumber" required>
+                <mat-error *ngIf="studentsacademicForm.get('admissionNumber')!.hasError('required')">
+                    Admission Number is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Attendence</mat-label>
+                <input matInput type="text" formControlName="attendence">
+                <mat-error *ngIf="studentsacademicForm.get('attendence')!.hasError('required')">
+                    Attendence is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+       
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 mb-3" (click)="onSubmit()">
+            <button mat-raised-button color="primary" type="submit" class="w-100">
+                Submit
+            </button>
+        </div>
+        <div class="col-md-6 mb-3">
+            <button mat-raised-button color="warn" type="button" class="w-100">
+                Reset
+            </button>
+        </div>
+    </div>
+</form>
