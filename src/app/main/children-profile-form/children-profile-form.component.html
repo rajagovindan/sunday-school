@@ -30,7 +30,7 @@
         <mat-select formControlName="gender">
           <mat-option value="male">Male</mat-option>
           <mat-option value="female">Female</mat-option>
-          <mat-option value="other">Other</mat-option>
+          <!-- <mat-option value="other">Other</mat-option> -->
         </mat-select>
         <mat-error *ngIf="studentForm.get('gender')!.hasError('required')">
           Gender is required
@@ -85,10 +85,10 @@
     <div class="col-md-6 mb-3">
       <mat-form-field appearance="fill" class="w-100">
         <mat-label>Date of Admission</mat-label>
-        <input matInput [matDatepicker]="doaDatePicker" formControlName="doa">
+        <input matInput [matDatepicker]="doaDatePicker" formControlName="admissionDate">
         <mat-datepicker-toggle matSuffix [for]="doaDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #doaDatePicker></mat-datepicker>
-        <mat-error *ngIf="studentForm.get('doa')!.hasError('required')">
+        <mat-error *ngIf="studentForm.get('admissionDate')!.hasError('required')">
           Date of Admission is required
         </mat-error>
       </mat-form-field>
@@ -138,8 +138,8 @@
     <div class="col-md-6 mb-3">
       <mat-form-field appearance="fill" class="w-100">
         <mat-label>Address</mat-label>
-        <textarea matInput formControlName="address"></textarea>
-        <mat-error *ngIf="studentForm.get('address')!.hasError('required')">
+        <textarea matInput formControlName="fullAddress"></textarea>
+        <mat-error *ngIf="studentForm.get('fullAddress')!.hasError('required')">
           Address is required
         </mat-error>
       </mat-form-field>
@@ -147,8 +147,8 @@
     <div class="col-md-6 mb-3">
       <mat-form-field appearance="fill" class="w-100">
         <mat-label>Student Mobile 1</mat-label>
-        <input matInput type="text" formControlName="studentMobile1">
-        <mat-error *ngIf="studentForm.get('studentMobile1')!.hasError('required')">
+        <input matInput type="text" formControlName="primaryContactNumber">
+        <mat-error *ngIf="studentForm.get('primaryContactNumber')!.hasError('required')">
           Student Mobile 1 is required
         </mat-error>
       </mat-form-field>
@@ -158,10 +158,10 @@
     <div class="col-md-6 mb-3">
       <mat-form-field appearance="fill" class="w-100">
         <mat-label>Student Mobile 2</mat-label>
-        <input matInput type="text" formControlName="studentMobile2">
-        <mat-error *ngIf="studentForm.get('studentMobile2')!.hasError('required')">
+        <input matInput type="text" formControlName="secondaryContactNumber">
+        <!-- <mat-error *ngIf="studentForm.get('secondaryContactNumber')!.hasError('required')">
           Student Mobile 2 is required
-        </mat-error>
+        </mat-error> -->
       </mat-form-field>
     </div>
     <div class="col-md-6 mb-3">
@@ -245,7 +245,7 @@
         <mat-label>Mother's Religion</mat-label>
         <input matInput type="text" formControlName="motherReligion">
         <mat-error *ngIf="studentForm.get('motherReligion')!.hasError('required')">
-          Mother's Religion Number is required
+          Mother's Religion is required
         </mat-error>
       </mat-form-field>
     </div>
@@ -254,7 +254,7 @@
         <mat-label>Mother's Denomination</mat-label>
         <input matInput type="text" formControlName="motherDenomination">
         <mat-error *ngIf="studentForm.get('motherDenomination')!.hasError('required')">
-          Mother's Denomination Number is required
+          Mother's Denomination is required
         </mat-error>
       </mat-form-field>
     </div>
