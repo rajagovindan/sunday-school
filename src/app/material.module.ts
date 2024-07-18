@@ -13,6 +13,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'; // Requi
 import { MatCardModule } from '@angular/material/card'; // Import MatCardModule
+import {MatExpansionModule} from '@angular/material/expansion';
 
 const materialModules = [
   MatFormFieldModule,
@@ -28,7 +29,8 @@ const materialModules = [
   MatTabsModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatCardModule
+  MatCardModule,
+  MatExpansionModule
 ]
 
 @NgModule({

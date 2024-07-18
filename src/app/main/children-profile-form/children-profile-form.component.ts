@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MainService } from '../main.service';
 @Component({
@@ -26,18 +26,22 @@ export class ChildrenProfileFormComponent {
       fullAddress: ['', Validators.required],
       primaryContactNumber: ['', Validators.required],
       secondaryContactNumber: [''],
-      fatherName: ['', Validators.required],
-      fatherReligion: ['', Validators.required],
-      fatherDenomination: ['', Validators.required],
-      fatherBaptismDate: ['', Validators.required],
-      fatherHolySpiritDate: ['', Validators.required],
-      fatherMobileNumber: ['', Validators.required],
-      motherName: ['', Validators.required],
-      motherReligion: ['', Validators.required],
-      motherDenomination: ['', Validators.required],
-      motherBaptismDate: ['', Validators.required],
-      motherHolySpiritDate: ['', Validators.required],
-      motherMobileNumber: ['', Validators.required]
+      father: this.fb.group({
+        name: ['', Validators.required],
+        religion: ['', Validators.required],
+        denomination: ['', Validators.required],
+        baptismDate: ['', Validators.required],
+        holySpiritDate: ['', Validators.required],
+        mobileNumber: ['', Validators.required]
+      }),
+      mother: this.fb.group({
+        name: ['', Validators.required],
+        religion: ['', Validators.required],
+        denomination: ['', Validators.required],
+        baptismDate: ['', Validators.required],
+        holySpiritDate: ['', Validators.required],
+        mobileNumber: ['', Validators.required]
+      })
     });
   }
   generateDate(date: any) {

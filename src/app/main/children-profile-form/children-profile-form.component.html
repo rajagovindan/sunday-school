@@ -1,302 +1,330 @@
 <form [formGroup]="studentForm" class="container" style="padding-top:50px">
-  <h5 class="mb-2">Student details form</h5>
-  <hr>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Name</mat-label>
-        <input matInput type="text" formControlName="name" required>
-        <mat-error *ngIf="studentForm.get('name')!.hasError('required')">
-          Name is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Date of Birth</mat-label>
-        <input matInput [matDatepicker]="dobDatePicker" formControlName="dob">
-        <mat-datepicker-toggle matSuffix [for]="dobDatePicker"></mat-datepicker-toggle>
-        <mat-datepicker #dobDatePicker></mat-datepicker>
-        <mat-error *ngIf="studentForm.get('dob')!.hasError('required')">
-          Date of Birth is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Gender</mat-label>
-        <mat-select formControlName="gender">
-          <mat-option value="male">Male</mat-option>
-          <mat-option value="female">Female</mat-option>
-          <!-- <mat-option value="other">Other</mat-option> -->
-        </mat-select>
-        <mat-error *ngIf="studentForm.get('gender')!.hasError('required')">
-          Gender is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Religion</mat-label>
-        <input matInput type="text" formControlName="religion">
-        <mat-error *ngIf="studentForm.get('religion')!.hasError('required')">
-          Religion is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Denomination</mat-label>
-        <input matInput type="text" formControlName="denomination">
-        <mat-error *ngIf="studentForm.get('denomination')!.hasError('required')">
-          Denomination is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Baptism Date</mat-label>
-        <input matInput [matDatepicker]="baptismDatePicker" formControlName="baptismDate">
-        <mat-datepicker-toggle matSuffix [for]="baptismDatePicker"></mat-datepicker-toggle>
-        <mat-datepicker #baptismDatePicker></mat-datepicker>
-        <mat-error *ngIf="studentForm.get('baptismDate')!.hasError('required')">
-          Baptism Date is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Holy Spirit Date</mat-label>
-        <input matInput [matDatepicker]="holySpiritDatePicker" formControlName="holySpiritDate">
-        <mat-datepicker-toggle matSuffix [for]="holySpiritDatePicker"></mat-datepicker-toggle>
-        <mat-datepicker #holySpiritDatePicker></mat-datepicker>
-        <mat-error *ngIf="studentForm.get('holySpiritDate')!.hasError('required')">
-          Holy Spirit Date is required
-        </mat-error>
-      </mat-form-field>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel expanded>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Student details </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="name" required>
+            <mat-error *ngIf="studentForm.get('name')!.hasError('required')">
+              Name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="dobDatePicker" formControlName="dob">
+            <mat-datepicker-toggle matSuffix [for]="dobDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #dobDatePicker></mat-datepicker>
+            <mat-error *ngIf="studentForm.get('dob')!.hasError('required')">
+              Date of Birth is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+              <!-- <mat-option value="other">Other</mat-option> -->
+            </mat-select>
+            <mat-error *ngIf="studentForm.get('gender')!.hasError('required')">
+              Gender is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Religion</mat-label>
+            <input matInput type="text" formControlName="religion">
+            <mat-error *ngIf="studentForm.get('religion')!.hasError('required')">
+              Religion is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Denomination</mat-label>
+            <input matInput type="text" formControlName="denomination">
+            <mat-error *ngIf="studentForm.get('denomination')!.hasError('required')">
+              Denomination is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Baptism Date</mat-label>
+            <input matInput [matDatepicker]="baptismDatePicker" formControlName="baptismDate">
+            <mat-datepicker-toggle matSuffix [for]="baptismDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #baptismDatePicker></mat-datepicker>
+            <mat-error *ngIf="studentForm.get('baptismDate')!.hasError('required')">
+              Baptism Date is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Holy Spirit Date</mat-label>
+            <input matInput [matDatepicker]="holySpiritDatePicker" formControlName="holySpiritDate">
+            <mat-datepicker-toggle matSuffix [for]="holySpiritDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #holySpiritDatePicker></mat-datepicker>
+            <mat-error *ngIf="studentForm.get('holySpiritDate')!.hasError('required')">
+              Holy Spirit Date is required
+            </mat-error>
+          </mat-form-field>
 
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Date of Admission</mat-label>
-        <input matInput [matDatepicker]="doaDatePicker" formControlName="admissionDate">
-        <mat-datepicker-toggle matSuffix [for]="doaDatePicker"></mat-datepicker-toggle>
-        <mat-datepicker #doaDatePicker></mat-datepicker>
-        <mat-error *ngIf="studentForm.get('admissionDate')!.hasError('required')">
-          Date of Admission is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Standard</mat-label>
-        <input matInput type="text" formControlName="standard">
-        <mat-error *ngIf="studentForm.get('standard')!.hasError('required')">
-          Standard is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Medium</mat-label>
-        <input matInput type="text" formControlName="medium">
-        <mat-error *ngIf="studentForm.get('medium')!.hasError('required')">
-          Medium is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Admission Number</mat-label>
-        <input matInput type="text" formControlName="admissionNumber">
-        <mat-error *ngIf="studentForm.get('admissionNumber')!.hasError('required')">
-          Admission Number is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Location</mat-label>
-        <input matInput type="text" formControlName="location">
-        <mat-error *ngIf="studentForm.get('location')!.hasError('required')">
-          Location is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Address</mat-label>
-        <textarea matInput formControlName="fullAddress"></textarea>
-        <mat-error *ngIf="studentForm.get('fullAddress')!.hasError('required')">
-          Address is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Student Mobile 1</mat-label>
-        <input matInput type="text" formControlName="primaryContactNumber">
-        <mat-error *ngIf="studentForm.get('primaryContactNumber')!.hasError('required')">
-          Student Mobile 1 is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Student Mobile 2</mat-label>
-        <input matInput type="text" formControlName="secondaryContactNumber">
-        <!-- <mat-error *ngIf="studentForm.get('secondaryContactNumber')!.hasError('required')">
-          Student Mobile 2 is required
-        </mat-error> -->
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Father's Name</mat-label>
-        <input matInput type="text" formControlName="fatherName">
-        <mat-error *ngIf="studentForm.get('fatherName')!.hasError('required')">
-          Father's Name is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Father's Religion</mat-label>
-        <input matInput type="text" formControlName="fatherReligion">
-        <mat-error *ngIf="studentForm.get('fatherReligion')!.hasError('required')">
-          Father's Religion is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Father's Denomination</mat-label>
-        <input matInput type="text" formControlName="fatherDenomination">
-        <mat-error *ngIf="studentForm.get('fatherDenomination')!.hasError('required')">
-          Father's Denomination is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Father's Baptism Date</mat-label>
-        <input matInput [matDatepicker]="fatherBaptismDatePicker" formControlName="fatherBaptismDate">
-        <mat-datepicker-toggle matSuffix [for]="fatherBaptismDatePicker"></mat-datepicker-toggle>
-        <mat-datepicker #fatherBaptismDatePicker></mat-datepicker>
-        <mat-error *ngIf="studentForm.get('fatherBaptismDate')!.hasError('required')">
-          Father's Baptism Date is required
-        </mat-error>
+        </div>
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Date of Admission</mat-label>
+            <input matInput [matDatepicker]="doaDatePicker" formControlName="admissionDate">
+            <mat-datepicker-toggle matSuffix [for]="doaDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #doaDatePicker></mat-datepicker>
+            <mat-error *ngIf="studentForm.get('admissionDate')!.hasError('required')">
+              Date of Admission is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Standard</mat-label>
+            <input matInput type="text" formControlName="standard">
+            <mat-error *ngIf="studentForm.get('standard')!.hasError('required')">
+              Standard is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Medium</mat-label>
+            <input matInput type="text" formControlName="medium">
+            <mat-error *ngIf="studentForm.get('medium')!.hasError('required')">
+              Medium is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Admission Number</mat-label>
+            <input matInput type="text" formControlName="admissionNumber">
+            <mat-error *ngIf="studentForm.get('admissionNumber')!.hasError('required')">
+              Admission Number is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Location</mat-label>
+            <input matInput type="text" formControlName="location">
+            <mat-error *ngIf="studentForm.get('location')!.hasError('required')">
+              Location is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="fullAddress"></textarea>
+            <mat-error *ngIf="studentForm.get('fullAddress')!.hasError('required')">
+              Address is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Student Mobile 1</mat-label>
+            <input matInput type="text" formControlName="primaryContactNumber">
+            <mat-error *ngIf="studentForm.get('primaryContactNumber')!.hasError('required')">
+              Student Mobile 1 is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Student Mobile 2</mat-label>
+            <input matInput type="text" formControlName="secondaryContactNumber">
+            <!-- <mat-error *ngIf="studentForm.get('secondaryContactNumber')!.hasError('required')">
+              Student Mobile 2 is required
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
 
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Father's Holy Spirit Date</mat-label>
-        <input matInput [matDatepicker]="fatherHolySpiritDatePicker" formControlName="fatherHolySpiritDate">
-        <mat-datepicker-toggle matSuffix [for]="fatherHolySpiritDatePicker"></mat-datepicker-toggle>
-        <mat-datepicker #fatherHolySpiritDatePicker></mat-datepicker>
-        <mat-error *ngIf="studentForm.get('fatherHolySpiritDate')!.hasError('required')">
-          Father's Holy Spirit is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Father's Mobile Number</mat-label>
-        <input matInput type="text" formControlName="fatherMobileNumber">
-        <mat-error *ngIf="studentForm.get('fatherMobileNumber')!.hasError('required')">
-          Father's Mobile Number is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Mother's Name</mat-label>
-        <input matInput type="text" formControlName="motherName">
-        <mat-error *ngIf="studentForm.get('motherName')!.hasError('required')">
-          Mother's Mobile Number is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Mother's Religion</mat-label>
-        <input matInput type="text" formControlName="motherReligion">
-        <mat-error *ngIf="studentForm.get('motherReligion')!.hasError('required')">
-          Mother's Religion is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Mother's Denomination</mat-label>
-        <input matInput type="text" formControlName="motherDenomination">
-        <mat-error *ngIf="studentForm.get('motherDenomination')!.hasError('required')">
-          Mother's Denomination is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Mother's Baptism Date</mat-label>
-        <input matInput [matDatepicker]="motherBaptismDatePicker" formControlName="motherBaptismDate">
-        <mat-datepicker-toggle matSuffix [for]="motherBaptismDatePicker"></mat-datepicker-toggle>
-        <mat-datepicker #motherBaptismDatePicker></mat-datepicker>
-        <mat-error *ngIf="studentForm.get('motherBaptismDate')!.hasError('required')">
-          Mother's Baptism Date is required
-        </mat-error>
-      </mat-form-field>
 
-    </div>
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Mother's Holy Spirit Date</mat-label>
-        <input matInput [matDatepicker]="motherHolySpiritDatePicker" formControlName="motherHolySpiritDate">
-        <mat-datepicker-toggle matSuffix [for]="motherHolySpiritDatePicker"></mat-datepicker-toggle>
-        <mat-datepicker #motherHolySpiritDatePicker></mat-datepicker>
-        <mat-error *ngIf="studentForm.get('motherHolySpiritDate')!.hasError('required')">
-          Mother's Holy Spirit Date is required
-        </mat-error>
-      </mat-form-field>
+    </mat-expansion-panel>
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title>Father's Details</mat-panel-title>
+      </mat-expansion-panel-header>
 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Mother's Mobile Number</mat-label>
-        <input matInput type="text" formControlName="motherMobileNumber">
-        <mat-error *ngIf="studentForm.get('motherMobileNumber')!.hasError('required')">
-          Mother's Mobile Number is required
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
+      <div formGroupName="father">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Father's Name</mat-label>
+              <input matInput type="text" formControlName="name">
+              <mat-error *ngIf="studentForm.get('father')!.get('name')!.hasError('required')">
+                Father's Name is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Father's Religion</mat-label>
+              <input matInput type="text" formControlName="religion">
+              <mat-error *ngIf="studentForm.get('father')!.get('religion')!.hasError('required')">
+                Father's Religion is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Father's Denomination</mat-label>
+              <input matInput type="text" formControlName="denomination">
+              <mat-error *ngIf="studentForm.get('father')!.get('denomination')!.hasError('required')">
+                Father's Denomination is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Father's Baptism Date</mat-label>
+              <input matInput [matDatepicker]="fatherBaptismDatePicker" formControlName="baptismDate">
+              <mat-datepicker-toggle matSuffix [for]="fatherBaptismDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #fatherBaptismDatePicker></mat-datepicker>
+              <mat-error *ngIf="studentForm.get('father')!.get('baptismDate')!.hasError('required')">
+                Father's Baptism Date is required
+              </mat-error>
+
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Father's Holy Spirit Date</mat-label>
+              <input matInput [matDatepicker]="fatherHolySpiritDatePicker" formControlName="holySpiritDate">
+              <mat-datepicker-toggle matSuffix [for]="fatherHolySpiritDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #fatherHolySpiritDatePicker></mat-datepicker>
+              <mat-error *ngIf="studentForm.get('father')!.get('holySpiritDate')!.hasError('required')">
+                Father's Holy Spirit is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Father's Mobile Number</mat-label>
+              <input matInput type="text" formControlName="mobileNumber">
+              <mat-error *ngIf="studentForm.get('father')!.get('mobileNumber')!.hasError('required')">
+                Father's Mobile Number is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>Mother's Details</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div formGroupName="mother">
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Mother's Name</mat-label>
+              <input matInput type="text" formControlName="name">
+              <mat-error *ngIf="studentForm.get('mother')!.get('name')!.hasError('required')">
+                Mother's Mobile Number is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Mother's Religion</mat-label>
+              <input matInput type="text" formControlName="religion">
+              <mat-error *ngIf="studentForm.get('mother')!.get('religion')!.hasError('required')">
+                Mother's Religion is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Mother's Denomination</mat-label>
+              <input matInput type="text" formControlName="denomination">
+              <mat-error *ngIf="studentForm.get('mother')!.get('denomination')!.hasError('required')">
+                Mother's Denomination is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Mother's Baptism Date</mat-label>
+              <input matInput [matDatepicker]="motherBaptismDatePicker" formControlName="baptismDate">
+              <mat-datepicker-toggle matSuffix [for]="motherBaptismDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #motherBaptismDatePicker></mat-datepicker>
+              <mat-error *ngIf="studentForm.get('mother')!.get('baptismDate')!.hasError('required')">
+                Mother's Baptism Date is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Mother's Holy Spirit Date</mat-label>
+              <input matInput [matDatepicker]="motherHolySpiritDatePicker" formControlName="holySpiritDate">
+              <mat-datepicker-toggle matSuffix [for]="motherHolySpiritDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #motherHolySpiritDatePicker></mat-datepicker>
+              <mat-error *ngIf="studentForm.get('mother')!.get('holySpiritDate')!.hasError('required')">
+                Mother's Holy Spirit Date is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Mother's Mobile Number</mat-label>
+              <input matInput type="text" formControlName="mobileNumber">
+              <mat-error *ngIf="studentForm.get('mother')!.get('mobileNumber')!.hasError('required')">
+                Mother's Mobile Number is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+  <div class="row mt-3">
     <div class="col-md-6 mb-3" (click)="onSubmit()">
       <button mat-raised-button color="primary" type="submit" class="w-100">
         Submit
