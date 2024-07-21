@@ -21,7 +21,7 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      this.router.navigate(['/children-details']);
+      this.router.navigate(['/student-details']);
       // Handle login logic here
       console.log('Form submitted successfully');
     } else {

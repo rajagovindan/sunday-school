@@ -16,12 +16,12 @@ const routes: Routes = [{
       canActivate:[AuthGuard]
     },
     {
-      path:'children-details',
+      path:'student-details',
       component: ChildrenProfileFormComponent,
       canActivate:[AuthGuard]
     },
     {
-      path:'children-academic-details',
+      path:'student-academic',
       component: ChildrenAcademicFormComponent,
       canActivate:[AuthGuard]
     },

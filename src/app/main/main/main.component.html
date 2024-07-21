@@ -1,1 +1,99 @@
-<router-outlet></router-outlet>
+<div class="wrapper">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown" (document:click)="handleClickOutside($event)">
+        <a class="nav-link" (click)="toggleDropdown()" role="button">
+          <i class="fas fa-user"></i>
+        </a>
+        <ul class="dropdown-menu" [class.show]="isDropdownOpen">
+          <li class="user-header">
+            <img src="../../../assets/student.png" class="img-circle" alt="User Image">
+            <p>
+              John Peter <br>
+              <small>Admin</small>
+            </p>
+          </li>
+          <li class="user-footer">
+            <div class="pull-left">
+              <a href="#" class="btn btn-default btn-flat">Profile</a>
+            </div>
+            <div class="pull-right">
+              <a href="#" class="btn btn-default btn-flat">Sign out</a>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="" class="brand-link">
+      <span class="brand-text font-weight-light">Logo</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
+              <i class="fa fa-dashboard"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <a routerLink="/student-details" routerLinkActive="active" class="nav-link">
+              <i class="fa fa-user"></i>
+              <p>Student Profile</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/student-academic" routerLinkActive="active" class="nav-link">
+              <i class="fa fa-user"></i>
+              <p>Student Academic</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/teachers-details" routerLinkActive="active" class="nav-link">
+              <i class="fa fa-user"></i>
+              <p>Teacher Profile</p>
+            </a>
+          </li>
+         
+        </ul>
+      </nav>
+      
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2024 <a href="#">Sunday School</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.1.0
+    </div>
+  </footer>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
