@@ -16,8 +16,8 @@ export class ChildrenProfileFormComponent {
       gender: ['', Validators.required],
       religion: ['', Validators.required],
       denomination: ['', Validators.required],
-      baptismDate: ['', Validators.required],
-      holySpiritDate: ['', Validators.required],
+      baptismDate: [''],
+      holySpiritDate: [''],
       admissionDate: ['', Validators.required],
       standard: ['', Validators.required],
       medium: ['', Validators.required],
@@ -31,16 +31,16 @@ export class ChildrenProfileFormComponent {
         name: ['', Validators.required],
         religion: ['', Validators.required],
         denomination: ['', Validators.required],
-        baptismDate: ['', Validators.required],
-        holySpiritDate: ['', Validators.required],
+        baptismDate: [''],
+        holySpiritDate: [''],
         mobileNumber: ['', Validators.required]
       }),
       mother: this.fb.group({
         name: ['', Validators.required],
         religion: ['', Validators.required],
         denomination: ['', Validators.required],
-        baptismDate: ['', Validators.required],
-        holySpiritDate: ['', Validators.required],
+        baptismDate: [''],
+        holySpiritDate: [''],
         mobileNumber: ['', Validators.required]
       })
     });
@@ -66,14 +66,14 @@ export class ChildrenProfileFormComponent {
       "gender": this.studentForm.value.gender,
       "primaryContactNumber": this.studentForm.value.primaryContactNumber,
       "secondaryContactNumber": this.studentForm.value.secondaryContactNumber,
-      "admissionDate": this.studentForm.value.admissionDate ? this.generateDate(this.studentForm.value.admissionDate) : null,
-      "dob": this.studentForm.value.dob ? this.generateDate(this.studentForm.value.dob) : null,
+      "admissionDate": this.studentForm.value.admissionDate ? this.studentForm.value.admissionDate : null,
+      "dob": this.studentForm.value.dob ? this.studentForm.value.dob : null,
       "religion": this.studentForm.value.religion,
       "denomination": this.studentForm.value.denomination,
       "baptismDate": this.studentForm.value.baptismDate
-        ? this.generateDate(this.studentForm.value.baptismDate
-        ) : null,
-      "holySpiritDate": this.studentForm.value.holySpiritDate ? this.generateDate(this.studentForm.value.holySpiritDate) : null,
+        ? this.studentForm.value.baptismDate
+         : null,
+      "holySpiritDate": this.studentForm.value.holySpiritDate ? this.studentForm.value.holySpiritDate: null,
       "standard": this.studentForm.value.standard,
       "location": this.studentForm.value.location,
       "fullAddress": this.studentForm.value.address,
@@ -81,20 +81,20 @@ export class ChildrenProfileFormComponent {
       "mothersDetails": {
       "name": this.studentForm.value.mother.name,
         "religion": this.studentForm.value.mother.religion,
-        "baptismDate": this.studentForm.value.mother.baptismDate ? this.generateDate(this.studentForm.value.
-          mother.baptismDate) : null,
+        "baptismDate": this.studentForm.value.mother.baptismDate ? this.studentForm.value.
+          mother.baptismDate : null,
         "holySpiritDate": this.studentForm.value.mother.holySpiritDate ? 
-        this.generateDate(this.studentForm.value.mother.holySpiritDate) : null,
+        this.studentForm.value.mother.holySpiritDate : null,
         "primaryContactNumber": this.studentForm.value.mother.mobileNumber,
         "denomination": this.studentForm.value.mother.denomination
       },
       "fathersDetails": {
         "name": this.studentForm.value.father.name,
         "religion": this.studentForm.value.father.religion,
-        "baptismDate": this.studentForm.value.father.baptismDate ? this.generateDate(this.studentForm.value.
-          father.baptismDate) : null,
+        "baptismDate": this.studentForm.value.father.baptismDate ? this.studentForm.value.
+          father.baptismDate : null,
         "holySpiritDate": this.studentForm.value.father.holySpiritDate ? 
-        this.generateDate(this.studentForm.value.father.holySpiritDate) : null,
+        this.studentForm.value.father.holySpiritDate : null,
         "primaryContactNumber": this.studentForm.value.father.mobileNumber,
         "denomination": this.studentForm.value.father.denomination
       }
