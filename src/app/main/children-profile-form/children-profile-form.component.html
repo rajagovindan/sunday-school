@@ -178,6 +178,16 @@
             </mat-error> -->
           </mat-form-field>
         </div>
+
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Academic Year</mat-label>
+            <input matInput type="text" formControlName="academicYear">
+             <mat-error *ngIf="studentForm.get('academicYear')!.hasError('required')">
+             Academic Year is required
+            </mat-error> 
+          </mat-form-field>
+        </div>
       </div>
 
 
