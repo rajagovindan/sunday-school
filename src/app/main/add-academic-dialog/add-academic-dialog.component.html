@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>Add Academic</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <div formArrayName="academics" *ngFor="let academic of academics.controls; let i=index">
+      <div [formGroupName]="i" class="form-row flex-container">
+        <div class="flex-item">
+          <mat-form-field>
+            <mat-label>Terms</mat-label>
+            <mat-select formControlName="terms">
+              <mat-option value="term1">Term 1</mat-option>
+              <mat-option value="term2">Term 2</mat-option>
+              <mat-option value="term3">Term 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="flex-item">
+          <mat-form-field>
+            <mat-label>Marks</mat-label>
+            <input matInput formControlName="marks">
+          </mat-form-field>
+        </div>
+        <div class="flex-item">
+          <mat-form-field>
+            <mat-label>Attendance</mat-label>
+            <input matInput formControlName="attendance">
+          </mat-form-field>
+        </div>
+        <div class="flex-item action-buttons">
+          <button mat-icon-button color="primary" (click)="addItem()">
+            <mat-icon>add</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="removeItem(i)" *ngIf="academics.length > 1">
+            <mat-icon>remove</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+    <button mat-button (click)="submit()">Add</button>
+  <button mat-button (click)="cancel()">cancel</button>
+</mat-dialog-actions>
