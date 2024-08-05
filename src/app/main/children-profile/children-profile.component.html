@@ -3,6 +3,7 @@
       <ng-template pTemplate="header">
         <tr>
           <th *ngFor="let col of columns">{{ col.header }}</th>
+          <th >Action</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-profile>
@@ -14,6 +15,10 @@
             <ng-template #dateCell>
               {{ resolveFieldData(profile, col.field) | date }}
             </ng-template>
+          </td>
+          <td>
+            <!-- Add your action buttons here -->
+            <button pButton type="button" icon="pi pi-plus" (click)="addAcademic(profile)">Add Academic </button>
           </td>
         </tr>
       </ng-template>

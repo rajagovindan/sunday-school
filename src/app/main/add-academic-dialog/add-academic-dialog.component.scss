@@ -1,0 +1,19 @@
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Optional: Adjust spacing between items */
+  }
+  
+  .flex-item {
+    flex: 1;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 5px; /* Optional: Adjust spacing between buttons */
+  }
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px; /* Optional: Adjust spacing between buttons */
+  }
