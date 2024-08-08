@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddAcademicDialogComponent } from '../add-academic-dialog/add-academic-dialog.component';
+import { MainService } from '../main.service';
 
 interface Profile {
   admissionNo: string;
@@ -82,7 +83,7 @@ export class ChildrenProfileComponent {
   // Define dynamic columns
   columns: any[];
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog,public _service: MainService) {
     // Initialize dynamic columns
     this.columns = [
       { field: 'admissionNo', header: 'Admission No' },
@@ -113,6 +114,12 @@ export class ChildrenProfileComponent {
       // { field: 'mother.mobileNumber', header: 'Mother\'s Mobile Number' },
     ];
   }
+  ngOnInit(): void {
+    this._service.getDetails().subscribe((res: any) => {
+      let profiles =res;
+      console.log("profiles",profiles)
+    });
+    }
   resolveFieldData(data: any, field: string): any { 
     if (field.includes('.')) {
       let fields = field.split('.');

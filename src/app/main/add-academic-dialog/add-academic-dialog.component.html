@@ -5,18 +5,21 @@
       <div [formGroupName]="i" class="form-row flex-container">
         <div class="flex-item">
           <mat-form-field>
-            <mat-label>Terms</mat-label>
-            <mat-select formControlName="terms">
+            <mat-label>Term</mat-label>
+            <mat-select formControlName="term">
               <mat-option value="term1">Term 1</mat-option>
+              <mat-option value="quarterly">Quarterly</mat-option>
               <mat-option value="term2">Term 2</mat-option>
-              <mat-option value="term3">Term 3</mat-option>
+              <mat-option value="halfyearly">Half Yearly</mat-option>
+              <mat-option value="model">Model</mat-option>
+              <mat-option value="annual">Annual</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
         <div class="flex-item">
           <mat-form-field>
-            <mat-label>Marks</mat-label>
-            <input matInput formControlName="marks">
+            <mat-label>Mark</mat-label>
+            <input matInput formControlName="mark">
           </mat-form-field>
         </div>
         <div class="flex-item">

@@ -9,12 +9,22 @@ export class MainService {
   constructor( public http : HttpClient) { }
   addStudent(payload : any)
   {
-    const url = 'http://localhost:8080/api/student/add';
+    const url = `http://localhost:8080/api/student/add`;
     return this.http.post(url, payload)
+  }
+  addAcademics(payload : any,studentid)
+  {
+    const url = `http://localhost:8080/api/student/${studentid}/academic/add`;
+    return this.http.post(url, payload)
+  }
+  getDetails()
+  {
+    const url = `http://localhost:8080/api/dashboard/detail`;
+    return this.http.get(url)
   }
   addTeachers(payload : any)
   {
-    const url = 'http://localhost:8080/api/staff/add';
+    const url = `http://localhost:8080/api/staff/add`;
     return this.http.post(url, payload)
   }
 }
