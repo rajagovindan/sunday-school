@@ -12,7 +12,7 @@ export class MainService {
     const url = `http://localhost:8080/api/student/add`;
     return this.http.post(url, payload)
   }
-  addAcademics(payload : any,studentid)
+  addAcademics(payload : any,studentid: any)
   {
     const url = `http://localhost:8080/api/student/${studentid}/academic/add`;
     return this.http.post(url, payload)
