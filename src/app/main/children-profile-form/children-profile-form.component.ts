@@ -76,10 +76,10 @@ export class ChildrenProfileFormComponent {
       "holySpiritDate": this.studentForm.value.holySpiritDate ? this.studentForm.value.holySpiritDate: null,
       "standard": this.studentForm.value.standard,
       "location": this.studentForm.value.location,
-      "fullAddress": this.studentForm.value.address,
+      "fullAddress": this.studentForm.value.fullAddress,
 
       "mothersDetails": {
-      "name": this.studentForm.value.mother.name,
+      "fullName": this.studentForm.value.mother.name,
         "religion": this.studentForm.value.mother.religion,
         "baptismDate": this.studentForm.value.mother.baptismDate ? this.studentForm.value.
           mother.baptismDate : null,
@@ -89,7 +89,7 @@ export class ChildrenProfileFormComponent {
         "denomination": this.studentForm.value.mother.denomination
       },
       "fathersDetails": {
-        "name": this.studentForm.value.father.name,
+        "fullName": this.studentForm.value.father.name,
         "religion": this.studentForm.value.father.religion,
         "baptismDate": this.studentForm.value.father.baptismDate ? this.studentForm.value.
           father.baptismDate : null,
