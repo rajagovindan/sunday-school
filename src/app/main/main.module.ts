@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { TeachersProfileFormComponent } from './teachers-profile-form/teachers-profile-form.component';
 import { ChildrenAcademicFormComponent } from './children-academic-form/children-academic-form.component';
 import { AddAcademicDialogComponent } from './add-academic-dialog/add-academic-dialog.component';
+import { AdvancedSearchComponentComponent } from './dashboard/advanced-search-component/advanced-search-component.component';
+import { TeacherAdvancedSearchComponent } from './dashboard/teacher-advanced-search/teacher-advanced-search.component';
+import { DashboardCounterCardComponent } from './dashboard/dashboard-counter-card/dashboard-counter-card.component';
 
 
 
@@ -23,7 +26,10 @@ import { AddAcademicDialogComponent } from './add-academic-dialog/add-academic-d
     ChildrenProfileComponent,
     TeachersProfileFormComponent,
     ChildrenAcademicFormComponent,
-    AddAcademicDialogComponent
+    AddAcademicDialogComponent,
+    AdvancedSearchComponentComponent,
+    TeacherAdvancedSearchComponent,
+    DashboardCounterCardComponent
   ],
   imports: [
     CommonModule,

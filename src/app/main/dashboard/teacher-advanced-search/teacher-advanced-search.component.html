@@ -1,0 +1,28 @@
+<form [formGroup]="searchForm" class="advanced-search-form">
+    <div class="row">
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Standard</mat-label>
+          <mat-select formControlName="standard">
+            <mat-option *ngFor="let standard of standards" [value]="standard">
+              {{ standard }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Medium</mat-label>
+          <mat-select formControlName="medium">
+            <mat-option *ngFor="let medium of mediums" [value]="medium">
+              {{ medium }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4 d-flex align-items-end">
+        <button mat-raised-button color="primary" class="w-100" (click)="onSearch()">Search</button>
+      </div>
+    </div>
+  </form>
+  
