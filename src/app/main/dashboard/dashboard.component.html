@@ -9,11 +9,36 @@
   </div><!-- /.container-fluid -->
 </div>
 
+<div class="container mt-1">
+  <div class="row">
+    <div class="col-md-6">
+      <app-dashboard-counter-card 
+        title="Students"
+        [count]="studentCount"
+        icon="fas fa-user-graduate"
+        bgColor="#17a2b8">
+      </app-dashboard-counter-card>
+    </div>
+
+    <div class="col-md-6">
+      <app-dashboard-counter-card 
+        title="Teachers"
+        [count]="teacherCount"
+        icon="fas fa-chalkboard-teacher"
+        bgColor="#28a745">
+      </app-dashboard-counter-card>
+    </div>
+  </div>
+</div>
+
+
 <p-tabView>
     <p-tabPanel header="Students">
-       <app-children-profile></app-children-profile>
+      <app-advanced-search-component (searchCriteria)="handleSearch($event)"></app-advanced-search-component>
+       <app-children-profile *ngIf="studentProfile"></app-children-profile>
     </p-tabPanel>
     <p-tabPanel header="Teachers">
-      Teacher Profile
+      <app-teacher-advanced-search (searchCriteria)="teacherHandleSearch($event)"></app-teacher-advanced-search>
+      <p *ngIf="teacherProfile">Teacher Profile</p>
     </p-tabPanel>
-  </p-tabView>
+</p-tabView>
