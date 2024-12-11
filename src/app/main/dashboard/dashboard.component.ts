@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MainService } from '../main.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
-  studentCount: number = 1500;
-  teacherCount: number = 75;
+  studentCount: number = 0;
+  teacherCount: number = 0;
   studentProfile = false;
   teacherProfile = false;
+  constructor( public _service: MainService) { }
+  ngOnInit() {
+    this._service.dashboardCount().subscribe((res: any) => {
+      this.studentCount = res
+      this.teacherCount = res
+    });
+  }
 
   handleSearch(criteria: any) {
     console.log('Received search criteria:', criteria);

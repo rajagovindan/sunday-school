@@ -77,9 +77,9 @@
             <input matInput [matDatepicker]="baptismDatePicker" formControlName="baptismDate">
             <mat-datepicker-toggle matSuffix [for]="baptismDatePicker"></mat-datepicker-toggle>
             <mat-datepicker #baptismDatePicker></mat-datepicker>
-            <mat-error *ngIf="studentForm.get('baptismDate')!.hasError('required')">
+            <!-- <mat-error *ngIf="studentForm.get('baptismDate')!.hasError('required')">
               Baptism Date is required
-            </mat-error>
+            </mat-error> -->
           </mat-form-field>
         </div>
       </div>
@@ -90,9 +90,9 @@
             <input matInput [matDatepicker]="holySpiritDatePicker" formControlName="holySpiritDate">
             <mat-datepicker-toggle matSuffix [for]="holySpiritDatePicker"></mat-datepicker-toggle>
             <mat-datepicker #holySpiritDatePicker></mat-datepicker>
-            <mat-error *ngIf="studentForm.get('holySpiritDate')!.hasError('required')">
+            <!-- <mat-error *ngIf="studentForm.get('holySpiritDate')!.hasError('required')">
               Holy Spirit Date is required
-            </mat-error>
+            </mat-error> -->
           </mat-form-field>
 
         </div>
@@ -178,6 +178,16 @@
             </mat-error> -->
           </mat-form-field>
         </div>
+
+        <div class="col-md-6 mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Academic Year</mat-label>
+            <input matInput type="text" formControlName="academicYear">
+             <mat-error *ngIf="studentForm.get('academicYear')!.hasError('required')">
+             Academic Year is required
+            </mat-error> 
+          </mat-form-field>
+        </div>
       </div>
 
 
@@ -224,9 +234,9 @@
               <input matInput [matDatepicker]="fatherBaptismDatePicker" formControlName="baptismDate">
               <mat-datepicker-toggle matSuffix [for]="fatherBaptismDatePicker"></mat-datepicker-toggle>
               <mat-datepicker #fatherBaptismDatePicker></mat-datepicker>
-              <mat-error *ngIf="studentForm.get('father')!.get('baptismDate')!.hasError('required')">
+              <!-- <mat-error *ngIf="studentForm.get('father')!.get('baptismDate')!.hasError('required')">
                 Father's Baptism Date is required
-              </mat-error>
+              </mat-error> -->
 
             </mat-form-field>
           </div>
@@ -239,9 +249,9 @@
               <input matInput [matDatepicker]="fatherHolySpiritDatePicker" formControlName="holySpiritDate">
               <mat-datepicker-toggle matSuffix [for]="fatherHolySpiritDatePicker"></mat-datepicker-toggle>
               <mat-datepicker #fatherHolySpiritDatePicker></mat-datepicker>
-              <mat-error *ngIf="studentForm.get('father')!.get('holySpiritDate')!.hasError('required')">
+              <!-- <mat-error *ngIf="studentForm.get('father')!.get('holySpiritDate')!.hasError('required')">
                 Father's Holy Spirit is required
-              </mat-error>
+              </mat-error> -->
             </mat-form-field>
           </div>
           <div class="col-md-6 mb-3">
@@ -302,9 +312,9 @@
               <input matInput [matDatepicker]="motherBaptismDatePicker" formControlName="baptismDate">
               <mat-datepicker-toggle matSuffix [for]="motherBaptismDatePicker"></mat-datepicker-toggle>
               <mat-datepicker #motherBaptismDatePicker></mat-datepicker>
-              <mat-error *ngIf="studentForm.get('mother')!.get('baptismDate')!.hasError('required')">
+              <!-- <mat-error *ngIf="studentForm.get('mother')!.get('baptismDate')!.hasError('required')">
                 Mother's Baptism Date is required
-              </mat-error>
+              </mat-error> -->
             </mat-form-field>
           </div>
         </div>
@@ -315,9 +325,9 @@
               <input matInput [matDatepicker]="motherHolySpiritDatePicker" formControlName="holySpiritDate">
               <mat-datepicker-toggle matSuffix [for]="motherHolySpiritDatePicker"></mat-datepicker-toggle>
               <mat-datepicker #motherHolySpiritDatePicker></mat-datepicker>
-              <mat-error *ngIf="studentForm.get('mother')!.get('holySpiritDate')!.hasError('required')">
+              <!-- <mat-error *ngIf="studentForm.get('mother')!.get('holySpiritDate')!.hasError('required')">
                 Mother's Holy Spirit Date is required
-              </mat-error>
+              </mat-error> -->
             </mat-form-field>
           </div>
           <div class="col-md-6 mb-3">
