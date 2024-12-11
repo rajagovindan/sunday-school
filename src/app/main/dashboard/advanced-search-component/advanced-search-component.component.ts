@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SEARCH_CRITERIA } from '../../../core/constants/search-criteria.constants';
+import { MainService } from '../../main.service';
 
 @Component({
   selector: 'app-advanced-search-component',
@@ -20,14 +21,15 @@ export class AdvancedSearchComponentComponent {
   years = SEARCH_CRITERIA.YEARS;
   teachers = SEARCH_CRITERIA.TEACHERS;
  
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,public _service: MainService) { }
 
   ngOnInit() {
+    console.log("stand",this.standards)
     this.searchForm = this.fb.group({
       standard: [''],
       location: [''],
       medium: [''],
-      teacher: [''],
+    
       attendance: [''],
       gender: [''],
       year: ['']
@@ -37,6 +39,10 @@ export class AdvancedSearchComponentComponent {
 
   onSearch() {
     console.log('Search Criteria:', this.searchForm.value);
+    let payload = Object.entries(this.searchForm.value).map(([key, value1]) => ({key,value1}));
+    this._service.studentfilterSearch(payload).subscribe((res: any) => {
+     
+    });
     const criteria = this.searchForm.value;
     this.searchCriteria.emit(criteria); // Emit the search criteria
   }

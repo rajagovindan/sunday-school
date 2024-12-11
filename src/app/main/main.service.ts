@@ -7,6 +7,21 @@ import { Injectable } from '@angular/core';
 export class MainService {
 
   constructor( public http : HttpClient) { }
+  dashboardCount()
+  {
+    const url = `http://localhost:8080/api/dashboard/detail`;
+    return this.http.get(url)
+  }
+  studentfilterSearch(payload : any)
+  {
+    const url = `http://localhost:8080/api/search/students`;
+    return this.http.post(url,payload)
+  }
+  stafffilterSearch(filtervalue : any)
+  {
+    const url = `http://localhost:8080/api/search/staffs`;
+    return this.http.post(url,filtervalue)
+  }
   addStudent(payload : any)
   {
     const url = `http://localhost:8080/api/student/add`;
