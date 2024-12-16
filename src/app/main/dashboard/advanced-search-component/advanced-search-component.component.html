@@ -4,8 +4,8 @@
       <mat-form-field appearance="fill" class="w-100">
         <mat-label>Standard</mat-label>
         <mat-select formControlName="standard">
-          <mat-option *ngFor="let standard of standards" [value]="standard">
-            {{ standard }}
+          <mat-option *ngFor="let standard of standards" [value]="standard.value">
+            {{ standard.key }}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -26,8 +26,8 @@
       <mat-form-field appearance="fill" class="w-100">
         <mat-label>Medium</mat-label>
         <mat-select formControlName="medium">
-          <mat-option *ngFor="let medium of mediums" [value]="medium">
-            {{ medium }}
+          <mat-option *ngFor="let medium of mediums" [value]="medium.value">
+            {{ medium.key}}
           </mat-option>
         </mat-select>
       </mat-form-field>

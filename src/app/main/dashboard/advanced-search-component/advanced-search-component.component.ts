@@ -13,18 +13,19 @@ export class AdvancedSearchComponentComponent {
   @Output() searchCriteria = new EventEmitter<any>();
   
   searchForm!: FormGroup;
-  standards = SEARCH_CRITERIA.STANDARDS;
+  // standards = SEARCH_CRITERIA.STANDARDS;
   locations = SEARCH_CRITERIA.LOCATIONS;
-  mediums = SEARCH_CRITERIA.MEDIUMS;
+  
   genders = SEARCH_CRITERIA.GENDERS;
   attendanceOptions = SEARCH_CRITERIA.ATTENDANCE_OPTIONS;
   years = SEARCH_CRITERIA.YEARS;
   teachers = SEARCH_CRITERIA.TEACHERS;
- 
+standards: any;
+ mediums: any;
   constructor(private fb: FormBuilder,public _service: MainService) { }
 
   ngOnInit() {
-    console.log("stand",this.standards)
+    
     this.searchForm = this.fb.group({
       standard: [''],
       location: [''],
@@ -33,7 +34,14 @@ export class AdvancedSearchComponentComponent {
       attendance: [''],
       gender: [''],
       year: ['']
-    });
+     
+    }); 
+    this._service.getstandard().subscribe((res : any) => {
+        this.standards = res.content;
+    })
+    this._service.getMedium().subscribe((res : any) => {
+      this.mediums = res.content;
+  })
   }
 
 
