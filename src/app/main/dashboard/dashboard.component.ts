@@ -13,10 +13,11 @@ export class DashboardComponent {
   teacherProfile = false;
   constructor( public _service: MainService) { }
   ngOnInit() {
-    this._service.dashboardCount().subscribe((res: any) => {
-      this.studentCount = res
-      this.teacherCount = res
-    });
+    // this._service.dashboardCount().subscribe((res: any) => {
+    //   this.studentCount = res
+    //   this.teacherCount = res
+    // });
+    
   }
 
   handleSearch(criteria: any) {
